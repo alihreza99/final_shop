@@ -1,0 +1,57 @@
+.oneiteminfo{
+    position: absolute;
+    height: 600px;
+    width: 70%;
+    left: 15%;
+    margin-top: 140px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(15, 15, 15);
+    border-radius: 10px;
+    box-shadow: inset;
+    box-shadow: 10px 5px 5px rgb(29, 28, 28);
+}
+.oneiteminfo h4{
+    color: white;
+}
+.infoimgpedar{
+    width: 50%;
+    margin: 10px;
+}
+.infoimg{
+    width: 80%;
+    height: 580px;
+    border-radius: 10px;
+}
+.infotitle{
+    color: black;
+    margin: 15px;
+}
+.infodes{
+    color: rgb(221, 220, 220);
+}
+.infotexts{
+    width: 50%;
+}
+.infocat{
+    color: rgb(193, 191, 202);
+    margin: 5px;
+}
+.infoprice{
+    color: rgb(216, 212, 212);
+    margin-top: 40px;
+}
+.infobtns{
+    width: 90%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 500px) {
+  .oneiteminfo{
+      flex-direction: column;
+      align-items: center;
+      height: 1300px;
+  }
+}

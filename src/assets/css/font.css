@@ -1,0 +1,9 @@
+@font-face {
+  font-family: vazir;
+  src: url("../Fonts/Vazir-Bold.ttf") format("truetype");
+  src: url("../Fonts/Vazir-Black-FD.ttf") format("truetype");
+  src: url("../Fonts//A-Iranian-Sans//iraniansans.ttf") format("truetype");
+}
+* {
+  font-family: vazir;
+}

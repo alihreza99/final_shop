@@ -1,0 +1,138 @@
+.navbar {
+  width: 100%;
+  direction: rtl;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  direction: rtl;
+  background-color: black;
+}
+.firstnav {
+  width: 30%;
+  position: absolute;
+  right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navmid {
+  direction: rtl;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-left: 100px;
+}
+
+.routlink {
+  text-decoration: none;
+  margin-top: 25px;
+  margin-left: 10px;
+  direction: rtl;
+  color: aliceblue;
+  margin-right: 20px;
+}
+.routlinktextdelete {
+  background-color: red;
+  border-radius: 10px;
+  color: rgb(5, 5, 5);
+}
+
+.navlink {
+  display: inline-block;
+  color: rgb(250, 249, 249);
+  margin-right: 20px;
+  margin-top: 5px;
+  text-decoration: none;
+}
+.navshop {
+  color: white;
+  margin-left: 10px;
+}
+.navlink:hover {
+  color: rgb(175, 184, 179);
+}
+.navlink::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  transition: width 0.3s;
+}
+
+.navlink:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+.shop {
+  font-size: 20px;
+}
+.logout {
+}
+.proflink {
+  color: white;
+}
+.navicon {
+  font-size: larger;
+  width: 20px;
+}
+.numberofitems {
+  width: 22px;
+  height: 22px;
+  background-color: red;
+  top: -10px;
+  left: 110px;
+  border-radius: 35px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.firstnav span {
+  color: white;
+  font-size: 20px;
+}
+.numberofcard {
+  position: absolute;
+  top: 0;
+}
+.navleft {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 20px;
+  top: 25px;
+}
+.login {
+  font-size: 20px;
+  color: rgb(3, 3, 3);
+  background-color: white;
+  text-decoration: none;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+@media only screen and (max-width: 650px) {
+  .navmid {
+    margin-top: 35px;
+    margin-left: 60%;
+    flex-direction: column;
+  }
+
+ 
+
+  .navicon {
+    top: 165px;
+    right: 55px;
+  }
+}

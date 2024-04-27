@@ -1,0 +1,457 @@
+h2 {
+  color: rgb(247, 247, 247);
+  font-size: 26px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  margin: 30px 0 60px;
+}
+h2::after {
+  content: "";
+  width: 100px;
+  position: absolute;
+  margin: 0 auto;
+  height: 4px;
+  border-radius: 1px;
+  background: #eaecf0;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+}
+.carousel {
+  margin: 50px auto;
+  padding: 0 70px;
+}
+.carousel .item {
+  color: #747d89;
+  min-height: 325px;
+  text-align: center;
+  overflow: hidden;
+}
+.carousel .thumb-wrapper {
+  padding: 25px 15px;
+  background: #fff;
+  border-radius: 6px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+.carousel .item .img-box {
+  height: 120px;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+}
+.item-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel .item img {
+  max-width: 100%;
+  max-height: 100%;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+.carousel .item h4 {
+  font-size: 18px;
+}
+.carousel .item h4,
+.carousel .item p,
+.carousel .item ul {
+  margin-bottom: 5px;
+}
+.carousel .thumb-content .btn {
+  color: #7ac400;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: none;
+  border: 1px solid #7ac400;
+  padding: 6px 14px;
+  margin-top: 5px;
+  line-height: 16px;
+  border-radius: 20px;
+}
+.carousel .thumb-content .btn:hover,
+.carousel .thumb-content .btn:focus {
+  color: rgb(0, 0, 0);
+  background: #fdfdfd;
+  box-shadow: none;
+}
+.carousel .thumb-content .btn i {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+.carousel .item-price {
+  font-size: 13px;
+  padding: 2px 0;
+}
+.item-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.item-price div {
+  margin-right: 5px;
+}
+.item-price span {
+  width: 100px;
+  padding: 3px;
+  margin-right: 3px;
+  border: 1px gray solid;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+.carousel .item-price strike {
+  opacity: 0.7;
+  margin-right: 5px;
+}
+.sliderbtn {
+  width: 60%;
+  margin-right: 20%;
+  margin-top: 10px;
+}
+.prev {
+  color: white;
+  margin-left: 2%;
+  position: absolute;
+  margin-top: 300px;
+}
+.next {
+  color: white;
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 91%;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  height: 40px;
+  width: 40px;
+  color: #f5f5f5;
+  margin: 750px 35px;
+  border-radius: 20px;
+  opacity: 0.8;
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  color: #f7f7f7;
+  opacity: 1;
+}
+.carousel-control-prev i,
+.carousel-control-next i {
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  margin: -19px 0 0 0;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  color: #fff;
+  text-shadow: none;
+  font-weight: bold;
+}
+.sliderbtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  /* margin-right: 20px; */
+}
+.carousel-control-prev i {
+  margin-left: -2px;
+}
+.carousel-control-next i {
+  margin-right: -4px;
+}
+.carousel-indicators {
+  bottom: -50px;
+}
+.carousel-indicators li,
+.carousel-indicators li.active {
+  width: 10px;
+  height: 10px;
+  margin: 4px;
+  border-radius: 50%;
+  border: none;
+}
+.carousel-indicators li {
+  background: rgba(255, 255, 255, 0.2);
+}
+.carousel-indicators li.active {
+  background: rgba(255, 255, 255, 0.6);
+}
+.carousel .wish-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 99;
+  cursor: pointer;
+  font-size: 16px;
+  color: #abb0b8;
+}
+.carousel .wish-icon .fa-heart {
+  color: #ff6161;
+}
+.star-rating li {
+  padding: 0;
+}
+.star-rating i {
+  font-size: 14px;
+  color: #ffc000;
+}
+.items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  direction: rtl;
+}
+.pedar_items {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.col-sm-3 {
+  direction: rtl;
+  width: 200px;
+  height: 200px;
+}
+.prices {
+  display: flex;
+  flex-direction: row;
+}
+.offcard {
+  direction: rtl;
+  padding: 5px;
+  height: 470px;
+  width: 210px;
+  margin: 20px 0px 100px 40px;
+  background-color: rgb(31, 31, 32);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 10px;
+}
+.offcard-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+.profileright {
+  border-radius: 10px;
+}
+.btn-dark {
+  margin-top: 5px;
+}
+.offcardimg {
+  height: 220px;
+  width: 100%;
+  border-radius: 10px;
+}
+.oldprice {
+  text-decoration: line-through;
+  font-size: 10px;
+  color: red;
+}
+.offcardtext {
+  color: rgb(0, 0, 0);
+}
+.itemslist {
+  display: flex;
+  width: 90%;
+  margin: 0 30px 0 30px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.offparent {
+  position: relative;
+  width: 90%;
+  height: 550px;
+  margin: 5%;
+  background-color: rgb(16, 17, 17);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.sliderbody {
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  width: 95%;
+  border-radius: 20px;
+  margin: 0 2.5%;
+  height: 680px;
+  margin-top: 50px;
+}
+.offsparent {
+  position: relative;
+  width: 90%;
+  height: 700px;
+  margin: 5%;
+  background-color: rgb(13, 14, 14);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.topoffpage {
+  margin-top: 20px;
+  height: 50px;
+  color: red;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.sliderlist {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 0 5%;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1200px) {
+  .offcard {
+    padding: 0px;
+    margin: 10px;
+    margin-bottom: 100px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .next {
+    margin-top: 525px;
+    margin-left: 89%;
+  }
+  .prev {
+    margin-top: 525px;
+  }
+  .carousel-control-prev {
+    top: 260px;
+  }
+  .carousel-control-next {
+    top: 260px;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .carousel {
+    margin: 20px auto;
+    padding: 0;
+  }
+  .col-sm-3 {
+    width: 90%;
+    margin-right: 10px;
+  }
+  .carousel-control-prev {
+    top: 260px;
+  }
+  .carousel-control-next {
+    top: 260px;
+  }
+}
+@media only screen and (max-width: 670px) {
+  .carousel-control-prev {
+    margin-top: 750px;
+  }
+  .carousel-control-next {
+    margin-top: 750px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .carousel-control-prev {
+    margin-top: 980px;
+  }
+  .carousel-control-next {
+    margin-top: 980px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .carousel-control-prev {
+    margin-top: 1400px;
+  }
+  .carousel-control-next {
+    margin-top: 1400px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .offsparent {
+    height: 1800px;
+    align-items: center;
+  }
+  .itemslist {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .sliderlist {
+    display: grid;
+    grid-template-columns: auto auto;
+
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+  }
+  .offsparent {
+    height: 1300px;
+  }
+  .itemslist {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 0 30px;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+  }
+  .sliderbody {
+    height: 1150px;
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .sliderbody {
+    height: 1950px;
+  }
+  .next {
+    margin-top: 1900px;
+    margin-left: 50%;
+  }
+  .prev {
+    margin-top: 1900px;
+    margin-left: 40%;
+  }
+  .sliderlist {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+  }
+  .col-sm-3 {
+    width: 80%;
+    height: 400px;
+    margin-left: 10px;
+  }
+  .itemslist {
+    display: flex;
+    flex-direction: column;
+  }
+  .offsparent {
+    height: 2500px;
+  }
+}

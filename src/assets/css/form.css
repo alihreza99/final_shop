@@ -1,0 +1,441 @@
+
+.title,
+.more {
+  padding: 10px 15px;
+}
+.title b {
+  font-size: 30px;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+
+.user__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 1.3em;
+}
+.text {
+  margin-right: 10px;
+}
+.grow {
+  width: 10%;
+  height: 20%;
+  margin-left: 45%;
+  margin-top: 15%;
+}
+.spinnerparent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+.usersbtns button {
+  margin-right: 10px;
+  width: 150px;
+}
+.name {
+  font-weight: 800;
+}
+
+.username {
+  font-size: 0.9em;
+  color: #64696e;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+  background: rgb(47, 47, 49);
+  background: linear-gradient(
+    295deg,
+    rgb(149, 148, 160) 41%,
+    rgb(76, 77, 78) 100%
+  );
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.follow {
+  border: none;
+  border-radius: 25px;
+  background-color: #0f1113;
+  color: white;
+  padding: 8px 15px;
+  font-weight: 700;
+}
+
+.more {
+  display: block;
+  text-decoration: none;
+  color: rgb(29, 155, 240);
+  font-weight: 800;
+}
+
+.user:hover {
+  background-color: #b3b6b6;
+}
+
+.more:hover {
+  background-color: #b3b6b6;
+  border-radius: 0px 0px 15px 15px;
+}
+.deleteuser {
+  border: none;
+  border-radius: 25px;
+  background-color: #720a10;
+  color: white;
+  padding: 8px 15px;
+  font-weight: 700;
+}
+.follow:hover {
+  background-color: #2c3136;
+}
+.Log_form {
+  background-color: rgb(255, 255, 255);
+  width: 40%;
+  margin-top: 50px;
+  border-radius: 6px;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 30%;
+}
+.formtitle {
+  padding: 10px;
+  direction: rtl;
+}
+.form-control {
+  background-color: rgb(255, 255, 255);
+  border-radius: 0 5px 5px 0;
+  direction: rtl;
+}
+.Log_form p {
+  color: red;
+}
+
+
+
+.form-control input {
+  width: 300px;
+  margin-top: 20px;
+  margin-right: 10%;
+  outline: none;
+  display: block;
+  width: 80%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background: #fdffff;
+  color: rgb(2, 2, 2);
+}
+#check {
+  margin-left: 90%;
+}
+.formbtnp{
+ position: relative;
+ width: 100%;
+ right: 0;
+}
+.log-button {
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background-color: #5c5e63;
+  color: whitesmoke;
+  height: 50px;
+  direction: rtl;
+  display: flex;
+  margin-top: 20px;
+  text-align: center;
+}
+.formq{
+  margin-bottom: 30px;
+
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+::placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 0.9;
+}
+.radio-parent {
+  margin-left: 10px;
+}
+
+label > sup {
+  color: red;
+}
+.repacparent {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.linktosign {
+  border: none;
+  border-radius: 5px;
+  background-color: #fdfdfd;
+  color: rgb(0, 0, 0);
+  height: 50px;
+  width: 50%;
+  direction: rtl;
+  margin-left: 25%;
+  text-align: center;
+  border: black solid 1px;
+  margin-top: 10px;
+}
+.linktosigntext {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.login-box {
+  direction: rtl;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 400px;
+  height: 650px;
+  padding: 40px;
+  margin: 20px auto ;
+  transform: translate(-50%, -55%);
+  background: rgba(0, 0, 0, 0.9);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  margin-top: 55px;
+}
+.login-box-sign {
+  direction: rtl;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 400px;
+  height: 980px;
+  padding: 40px;
+  transform: translate(-50%, -55%);
+  background: rgba(0, 0, 0, 0.9);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+.login-box p:first-child {
+  direction: rtl;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  direction: rtl;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.errortext {
+  color: red !important;
+  direction: rtl;
+}
+.formlable {
+  direction: rtl;
+  font-size: 16px;
+  color: white;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #fff;
+  font-size: 12px;
+}
+
+.input{
+  border-radius: 10px;
+  height: 40px;
+}
+.log-button {
+  direction: rtl;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 3px;
+}
+
+.log-button:hover {
+  background: #fff;
+  color: #272727;
+  border-radius: 5px;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #fff);
+  animation: btn-anim1 1.5s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #fff);
+  animation: btn-anim2 1.5s linear infinite;
+  animation-delay: 0.375s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #fff);
+  animation: btn-anim3 1.5s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #fff);
+  animation: btn-anim4 1.5s linear infinite;
+  animation-delay: 1.125s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+.login-box p:last-child {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.login-box a.a2 {
+  color: #fff;
+  text-decoration: none;
+}
+
+.login-box a.a2:hover {
+  background: transparent;
+  color: #aaa;
+  border-radius: 5px;
+}
+@media only screen and (max-width: 1200px) {
+  .recap {
+    padding: 5px 10%;
+  }
+  #check {
+    margin-right: 10%;
+    margin-left: 70%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .login-box {
+    margin-top: 100px;
+  }
+  .Log_form {
+    width: 100%;
+    margin-top: 50px;
+    border-radius: 6px;
+    position: relative;
+    margin-left: 0;
+  }
+  .usersbtns button {
+    margin-right: 10px;
+    width: 90px;
+  }
+}
