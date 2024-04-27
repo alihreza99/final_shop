@@ -46,6 +46,7 @@
 
 .ban {
   margin-top: 80px;
+  border-radius: 10px;
   height: 320px;
 }
 .ban button {

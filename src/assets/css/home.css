@@ -210,7 +210,7 @@ body {
 
 .cardbody {
   width: 200px;
-  height: 400px;
+  height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,8 +219,8 @@ body {
   direction: rtl;
 }
 .cardimg {
-  width: 150px;
-  height: 200px;
+  width: 220px;
+  height: 250px;
   border-radius: 10px;
 }
 
@@ -507,8 +507,8 @@ body {
 }
 @media only screen and (min-width: 1300px) {
   .cardbody {
-    width: 280px;
-    height: 400px;
+    width: 200px;
+    height: 500px;
   }
   .sliderbody {
     height: 800px;
@@ -536,6 +536,12 @@ body {
   }
   .d-none {
     display: flex;
+  }
+  .cardimg {
+    width: 180px;
+  }
+  .cardbody {
+    height: 450px;
   }
 }
 @media only screen and (max-width: 1100px) {
