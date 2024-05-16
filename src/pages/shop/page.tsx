@@ -95,10 +95,46 @@ const Page: NextPage = () => {
               <Nav />
               {data?.auth?.shopitems?.length == 0 && (
                 <>
-                  <div className="emptyparent">
-                    <h1 className="emptypage">سبد خرید شما خالی است!!</h1>
+                  <div className="shoppedar">
+                    <div className="shoppedaritems">
+                      <>
+                        <div className="shopleft">
+                          <div className="shopminibox">
+                            <div className="shopminibox-text">
+                              <p className="text-light"> تعداد کالاها: </p>
+                              <p className="text-light">{all}</p>
+                            </div>
+                            <div className="shop-btn">
+                              <Link href="/donepage/page">
+                                <Button
+                                  variant="contained"
+                                  id="buybtn"
+                                  className="btn btn-success"
+                                  type="submit"
+                                >
+                                  <LocalMallIcon style={styleForPaper} />
+                                  <p>تکمیل خرید</p>{" "}
+                                </Button>
+                              </Link>
+                            </div>
+                          </div>
+                          <div className="shopleft-text">
+                            <p>
+                              ارسال رایگان سفارش‌ها برای اعضای شاپلاین ۴۹
+                              هزارتومان هزینه ارسال به سراسر ایران برای کاربران
+                              غیر شاپلاین
+                            </p>
+                          </div>
+                        </div>
+                      </>
+                      <div className="pedarshopempty">
+                        <div className="emptyparent">
+                          <h1 className="emptypage">سبد خرید شما خالی است!!</h1>
+                        </div>
+                      </div>
+                    </div>
+                    <Footer />
                   </div>
-                  <Footer />
                 </>
               )}
               {data?.auth?.shopitems?.length != 0 && (

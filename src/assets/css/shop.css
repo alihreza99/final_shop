@@ -16,6 +16,23 @@
   border: #000000 1px solid;
   border-radius: 10px;
 }
+.pedarshopempty{
+    justify-content: center;
+  direction: rtl;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 3%;
+  padding: 10px;
+  height: 100%;
+  margin-top: 60px;
+  margin-bottom: 300px;
+  width: 95%;
+  margin: 20px 2.5%;
+  border: #000000 1px solid;
+  border-radius: 10px;
+}
 .pedarshop {
   justify-content: center;
   direction: rtl;
