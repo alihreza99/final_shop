@@ -1,7 +1,5 @@
 import React from "react";
 import Pic from "../../assets/pics/pic3.jpg";
-import Link from "next/link";
-import { Button } from "@mui/material";
 import { NextPage } from "next";
 
 const Info: NextPage = () => {

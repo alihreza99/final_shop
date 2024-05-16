@@ -4,7 +4,7 @@ import { store } from "../redux/store";
 import { useCart } from "react-use-cart";
 import { useCookies } from "react-cookie";
 import Circle from "@uiw/react-color-circle";
-
+import SearchIcon from "@mui/icons-material/Search";
 interface Props {
   id: string;
   img: string;
@@ -26,7 +26,7 @@ const Card: React.FC<Props> = ({
 }) => {
   const dispatch = useDispatch();
   let [isthere, setisthere] = useState<boolean | string>("");
-  let [data, setdata] = useState(store.getState());
+  let [data, setdata] = useState(store?.getState());
   const { addItem } = useCart();
   const [cookies, setCookie, getCookie] = useCookies(["user"]);
 
@@ -35,8 +35,7 @@ const Card: React.FC<Props> = ({
 
   useEffect(() => {
     setisthere(false);
-    // @ts-ignore
-    data.auth.shopitems?.map((item: any) => {
+    data?.auth?.shopitems?.map((item: any) => {
       if (item?.id === id) {
         return setisthere(true);
       }
@@ -46,15 +45,13 @@ const Card: React.FC<Props> = ({
   function increase() {
     let lable:any;
     lable = "labelCount";
-    let countArry = getCookie(lable);
+    let countArry:any = getCookie(lable);
     setisthere(false);
-    // @ts-ignore
-    data.auth.shopitems?.map((item: any) => {
+    data?.auth?.shopitems?.map((item: any) => {
       if (item?.id === id) {
         return setisthere(true);
       }
     });
-    // @ts-ignore
     countArry?.push(id?.toString());
     setCookie(lable, countArry);
 
@@ -85,7 +82,7 @@ const Card: React.FC<Props> = ({
             <h4 className="text-light">{title}</h4>
             <p className="item-price text-light">
               <b className=" text-light">${price}</b>
-              <div className="text-light">
+              <div className="sizes text-light">
                 <span>xl</span>
                 <span>m</span>
                 <span>sm</span>
@@ -93,24 +90,30 @@ const Card: React.FC<Props> = ({
             </p>
             <hr />
 
-            <Circle
-              colors={["#9c27b0", "#673ab7", "#3f51b5", "#2196f3"]}
-              color={hex}
-              pointProps={{
-                style: {
-                  marginRight: 20,
-                },
-              }}
-              onChange={(color: any) => {
-                setHex(color.hex);
-              }}
-            />
+            <div className="colors">
+              <Circle
+                colors={["#9c27b0", "#673ab7", "#3f51b5", "#2196f3"]}
+                color={hex}
+                pointProps={{
+                  style: {
+                   display:"flex",
+                   flexDirection:"row",
+                   justifyContent:"space-between",
+                   padding:"5px",
+                   margin:"5px 5px 0 5px"
+                  },
+                }}
+                onChange={(color: any) => {
+                  setHex(color.hex);
+                }}
+              />
+            </div>
             <div className="sliderbtns">
               <Link
                 href={`/item/${id}`}
                 className="btn text-light border-bottom veiwbtn"
               >
-                مشاهده
+                <SearchIcon className="searchicon"/>
               </Link>
             </div>
           </div>

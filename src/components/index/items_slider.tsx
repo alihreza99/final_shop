@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { ToastContainer, toast } from "react-toastify";
@@ -85,7 +84,7 @@ const Slider: NextPage = () => {
 
         {currentPage > 1 && (
           <a className="prev" data-slide="prev" onClick={prepage}>
-            <ArrowBackIosIcon />
+            <ArrowBackIosIcon className="icon"/>
           </a>
         )}
         {currentPage < 5 && (

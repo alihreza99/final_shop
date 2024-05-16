@@ -1,6 +1,6 @@
 .oneiteminfo{
     position: absolute;
-    height: 600px;
+    height: 550px;
     width: 70%;
     left: 15%;
     margin-top: 140px;
@@ -20,7 +20,7 @@
 }
 .infoimg{
     width: 80%;
-    height: 580px;
+    height: 530px;
     border-radius: 10px;
 }
 .infotitle{

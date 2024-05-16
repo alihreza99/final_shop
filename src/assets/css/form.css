@@ -55,16 +55,8 @@
 }
 
 .image {
-  width: 60px;
-  height: 60px;
-  background: rgb(47, 47, 49);
-  background: linear-gradient(
-    295deg,
-    rgb(149, 148, 160) 41%,
-    rgb(76, 77, 78) 100%
-  );
-  border-radius: 50%;
-  margin-right: 15px;
+  width: 100%;
+  height: 220px;
 }
 
 .follow {
@@ -214,7 +206,7 @@ label > sup {
   top: 45%;
   left: 50%;
   width: 400px;
-  height: 650px;
+  height: 680px;
   padding: 40px;
   margin: 20px auto ;
   transform: translate(-50%, -55%);
@@ -247,22 +239,47 @@ label > sup {
   font-weight: bold;
   letter-spacing: 1px;
 }
-
+#buybtn{
+  margin-top: 40px;
+}
 .login-box .user-box {
   position: relative;
 }
-
-.login-box .user-box input {
+.textinput{
   direction: rtl;
+  background-color: #292a2b;
+  border-radius: 5px;
   width: 100%;
-  padding: 10px 0;
+}
+.input{
+  direction: rtl;
+  width: 95%;
+  margin-top: 10px;
+  height: 20px;
   font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
+  color: rgb(8, 8, 8);
+  margin-top: 130px;
   border: none;
+  color: white;
   border-bottom: 1px solid #fff;
   outline: none;
   background: transparent;
+  border-radius: 10px;
+}
+.login-box .user-box input {
+  direction: rtl;
+  width: 95%;
+  margin-top: 10px;
+  height: 50px;
+  font-size: 16px;
+  color: rgb(8, 8, 8);
+  margin-bottom: 30px;
+  border: none;
+  color: white;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  border-radius: 10px;
 }
 .errortext {
   color: red !important;

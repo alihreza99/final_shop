@@ -4,6 +4,7 @@ const initState = {
   admin: null,
   shopitems: shop,
   prices: 0,
+  numbers: 0,
 };
 
 export default function auth(state = initState, action) {
@@ -31,27 +32,29 @@ export default function auth(state = initState, action) {
       const item = action.payload;
       return {
         ...state,
+        numbers: state.numbers + 1 ,
         shopitems: [...state.shopitems, item],
       };
     case "delete":
       const deleteduserId = action.payload;
       return {
         ...state,
+        numbers: state.numbers + 1,
         entities: state.entities.filter((user) => user?.id !== deleteduserId),
       };
     case "deleteitem":
       const deleteit = action.payload;
       return {
         ...state,
+        numbers: state.numbers - 1,
         shopitems: state.shopitems.filter((user) => user?.id !== deleteit),
       };
     case "plus":
       const edit = action.payload;
       return {
         ...state,
+        numbers: 1 + state.numbers,
         shopitems: state.shopitems?.map((items) => {
-          console.log(state.shopitems);
-          console.log(items?.id);
           if (items?.id == edit?.fid) {
             return {
               title: items?.title,
@@ -70,9 +73,8 @@ export default function auth(state = initState, action) {
       const edit2 = action.payload;
       return {
         ...state,
+        numbers: state.numbers - 1,
         shopitems: state.shopitems?.map((items) => {
-          console.log(state.shopitems);
-          console.log(items?.id);
           if (items?.id == edit2?.fid) {
             return {
               title: items?.title,

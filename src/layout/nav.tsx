@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import Link from "next/link";
 import { store } from "../redux/store";
 import { useCart } from "react-use-cart";
@@ -18,13 +15,10 @@ import LoginIcon from "@mui/icons-material/Login";
 
 const Navbar: NextPage = () => {
   const admin = useSelector((state: any) => state.auth.admin);
-  // @ts-ignore
-  const [num, setnum] = useState(store.getState().auth.shopitems?.length);
+  const [num, setnum] = useState(store?.getState().auth?.shopitems?.length);
   useEffect(() => {
-    // @ts-ignore
-    setnum(store.getState().auth.shopitems?.length);
-    // @ts-ignore
-  }, [store.getState().auth.shopitems?.length]);
+    setnum(store?.getState().auth?.shopitems?.length);
+  }, [store?.getState().auth?.shopitems?.length]);
 
   const { isEmpty, totalItems } = useCart();
   const dispatch = useDispatch();
@@ -34,8 +28,9 @@ const Navbar: NextPage = () => {
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const [cookie, getCookie, removeCookie] = useCookies(["userToken"]);
   const styleForPaper = {
-    width: "40px",
-    height: "40px",
+    width: "30px",
+    height: "30px",
+    margin_top:"50px",
   };
   return (
     <>
@@ -47,24 +42,19 @@ const Navbar: NextPage = () => {
       >
         <div className="firstnav">
           <span>
-            شاپلاین
             <ShoppingBasketIcon />
+            شاپلاین
           </span>
           <Link className="navlink" href="/">
             خانه
           </Link>
-          <Link className="navlink" href="/donepage/page">
-            تکمیل خرید{" "}
-          </Link>{" "}
         </div>
-        <div className="navmid"></div>
         {cookie.userToken && (
           <div className="navleft">
             <Link href="/shop/page" className="navshop">
               <div>
                 <LocalGroceryStoreIcon style={styleForPaper} />
-                {/* @ts-ignore */}
-                {store.getState().auth.shopitems?.length != 0 && (
+                {store?.getState().auth?.shopitems?.length != 0 && (
                   <div className="numberofitems">{totalItems}</div>
                 )}
               </div>
@@ -82,7 +72,7 @@ const Navbar: NextPage = () => {
                   }}
                 >
                   <LogoutIcon />
-                  خروج
+                  <p>خروج</p>
                 </Link>
               </div>
             </Link>
@@ -91,8 +81,8 @@ const Navbar: NextPage = () => {
         {!cookie.userToken && (
           <div className="navleft">
             <Link href="/auth/login/page" className="login">
+              <LoginIcon style={styleForPaper} />
               ورود
-              <LoginIcon />
             </Link>
           </div>
         )}

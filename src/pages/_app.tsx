@@ -6,7 +6,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { CartProvider } from "react-use-cart";
 import { CookiesProvider } from "react-cookie";
 import Head from "next/head";
-
+import ErrorBoundary from "@/layout/errorBoundary";
 import "react-toastify/dist/ReactToastify.css";
 import "../assets/css/form.css";
 import "../assets/css/home.css";
@@ -42,7 +42,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <CartProvider>
           <Provider store={store}>
             <PersistGate persistor={persistor}>
-              <Component {...pageProps} />
+              <ErrorBoundary>
+                <Component {...pageProps} />
+              </ErrorBoundary>
             </PersistGate>
           </Provider>
         </CartProvider>

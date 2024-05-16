@@ -11,7 +11,9 @@ const page: NextPage = () => {
   const [loading, setLoading] = React.useState(true);
   const timer = React.useRef<any>();
   React.useEffect(() => {
-    setLoading(true);
+    timer.current = window.setTimeout(() => {
+      setLoading(true);
+    }, 1000);
     timer.current = window.setTimeout(() => {
       setLoading(false);
     }, 1000);

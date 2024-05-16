@@ -2,18 +2,15 @@ import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-// @ts-ignore
 import ReCAPTCHA from "react-google-recaptcha";
-import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { FormControl, FormLabel, Button } from "@mui/material";
+import { FormLabel, Button } from "@mui/material";
 import { NextPage } from "next";
 import { useCookies } from "react-cookie";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import Spin from "../../../components/spin";
-
-
+import LoginIcon from "@mui/icons-material/Login";
 const schema = yup.object().shape({
   firstname: yup.string().required("لطفا نام خود را وارد کنید"),
   pass: yup
@@ -59,23 +56,7 @@ const Login: NextPage = () => {
     baseURL: "https://fakestoreapi.com/",
   });
 
-  const callApi = () => {
-    axiosInstance.interceptors.request.use(
-      (config: any) => {
-        return config;
-      },
-      (err: any) => Promise.reject(err)
-    );
-
-    axiosInstance.interceptors.response.use(
-      (res: any) => {
-        return res;
-      },
-      (err: any) => Promise.reject(err)
-    );
-
-    return axiosInstance;
-  };
+  
 
   const onSubmit = async () => {
     const captchaValue = recaptcha.current.getValue();
@@ -104,9 +85,7 @@ const Login: NextPage = () => {
               domain: "localhost",
               path: "/",
             }),
-              // @ts-ignore
-              window.grecaptcha.reset();
-            reset();
+              reset();
             dispatch({
               type: "log",
               payload: { username: "admin" },
@@ -150,7 +129,9 @@ const Login: NextPage = () => {
           <p>ورود</p>
           <form onSubmit={handleSubmit(onSubmit)}>
             <FormLabel sx={{ color: "white" }} className="formlable">
-              نام کاربری<sup className="errortext">*</sup>
+              <p className="formlable_p">
+                نام کاربری<sup className="errortext">*</sup>{" "}
+              </p>
             </FormLabel>
             <div className="user-box">
               <input
@@ -160,16 +141,16 @@ const Login: NextPage = () => {
                 type="text"
                 onChange={handleChangename}
               />
-              {/* @ts-ignore */}
-              <p className="errortext">{errors.firstname?.message}</p>
+              <p className="errortext">{errors?.firstname?.message as any}</p>
             </div>
             <FormLabel
               sx={{ color: "white" }}
               color="primary"
               className="formlable"
             >
-              {" "}
-              رمز ورود<sup className="errortext">*</sup>
+              <p className="formlable_p">
+                رمز ورود<sup className="errortext">*</sup>
+              </p>
             </FormLabel>
             <div className="user-box">
               <input
@@ -179,11 +160,11 @@ const Login: NextPage = () => {
                 type="password"
                 onChange={handleChangepass}
               />
-              {/* @ts-ignore */}
-              <p className="errortext">{errors.pass?.message}</p>
+              <p className="errortext">{errors?.pass?.message as any}</p>
             </div>
 
             <Button variant="contained" id="buybtn" className="" type="submit">
+              <LoginIcon/>
               ورود
             </Button>
           </form>
@@ -204,3 +185,4 @@ const Login: NextPage = () => {
 };
 
 export default Login;
+

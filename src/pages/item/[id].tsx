@@ -9,15 +9,14 @@ import { useCart } from "react-use-cart";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import { useSelector } from "react-redux";
-import Notloged from "../../components/not_sign_in";
 import { Button } from "@mui/material";
-import { NextPage, GetServerSideProps } from "next";
 import Link from "next/link";
 import LoginIcon from "@mui/icons-material/Login";
 import Spin from "../../components/spin";
 import "react-toastify/dist/ReactToastify.css";
-// @ts-ignore
-export default function Users({ data }) {
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+
+export default function Users({ data }: { data: any }) {
   const [hex, setHex] = useState("#F44E3B");
   const router = useRouter();
   const [cookies, setCookie, getCookie] = useCookies(["user"]);
@@ -33,8 +32,7 @@ export default function Users({ data }) {
   lable = "labelCount";
   useEffect(() => {
     setisthere(false);
-    // @ts-ignore
-    list.auth.shopitems?.map((item: any) => {
+    list?.auth?.shopitems?.map((item: any) => {
       if (item?.id === data?.id) {
         return setisthere(true);
       }
@@ -42,16 +40,14 @@ export default function Users({ data }) {
   }, []);
 
   function increase() {
-    let countArry = getCookie(lable);
+    let countArry: any = getCookie(lable);
     setisthere(false);
-    // @ts-ignore
-    list.auth.shopitems?.map((item: any) => {
+    list?.auth?.shopitems?.map((item: any) => {
       if (item?.id === data?.id) {
         return setisthere(true);
       }
     });
-    // @ts-ignore
-    countArry?.push(id?.toString());
+    countArry?.push(data?.id?.toString());
     setCookie(lable, countArry);
 
     if (!isthere) {
@@ -86,6 +82,7 @@ export default function Users({ data }) {
       clearTimeout(timer.current);
     };
   }, []);
+  let num:any = parseInt(router?.query?.id as any);
   return (
     <>
       <ToastContainer
@@ -104,12 +101,9 @@ export default function Users({ data }) {
       {loading && <Spin />}
       {!loading && (
         <>
-          {/* @ts-ignore */}
-          {!(router.query.id < 21) && <NotFound />}
-          {/* @ts-ignore */}
-          {router.query.id <= 0 && <NotFound />}
-          {/* @ts-ignore */}
-          {router.query.id < 21 && router.query.id > 0 && (
+          {!((num as any) < 21) && <NotFound />}
+          {(num as any) <= 0 && <NotFound />}
+          {(num as any) < 21 && (num as any) > 0 && (
             <div className="oneiteminfo">
               <div className="infoimgpedar">
                 <img src={data?.image} className="infoimg" alt="" />
@@ -160,7 +154,8 @@ export default function Users({ data }) {
                           id="buybtn"
                           className="btn btn-success"
                         >
-                          افزودن به سبد خرید
+                           <p>خرید</p>
+                           <LocalMallIcon/>
                         </Button>
                       )}
                     </div>

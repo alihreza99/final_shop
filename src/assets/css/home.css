@@ -85,7 +85,7 @@ body {
   height: 60%;
   margin-top: 40px;
   margin-left: 80px;
-  border-radius: 10px;
+  border-radius: 15px;
   background-image: url("../../assets/pics/pic8.jpg");
   background-repeat: round;
   display: flex;
@@ -99,7 +99,7 @@ body {
   height: 60%;
   margin-top: 40px;
   margin-left: 80px;
-  border-radius: 10px;
+  border-radius: 15px;
   background-image: url("../../assets/pics/pic16.jpg");
   background-repeat: round;
   display: flex;
@@ -113,7 +113,7 @@ body {
   height: 60%;
   margin-top: 40px;
   margin-left: 80px;
-  border-radius: 10px;
+  border-radius: 15px;
   background-image: url("../../assets/pics/pic10.webp");
   background-repeat: round;
   display: flex;
@@ -210,17 +210,30 @@ body {
 
 .cardbody {
   width: 200px;
-  height: 550px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  background-color: rgb(40, 41, 46);
+  background-color: rgb(35, 35, 36);
   direction: rtl;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+.colors{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardbody:hover {
+  opacity: 1;
+  background-color: #343536;
 }
 .cardimg {
-  width: 220px;
-  height: 250px;
+  width: 260px;
+  height: 300px;
   border-radius: 10px;
 }
 
@@ -284,9 +297,7 @@ body {
 .text-uppercase {
   color: white;
 }
-.list-unstyled li {
-  margin-left: 25px;
-}
+
 .offpage {
   margin-top: 500px;
 }
@@ -381,12 +392,14 @@ body {
   height: 30px;
 }
 .map-wrap {
+  background-color: #000000;
   border-radius: 10px;
   position: relative;
-  width: 60%;
-  margin-right: 5%;
-  margin-top: 10px;
-  height: calc(100vh - 77px);
+  width: 70%;
+  margin-right: 1%;
+  margin-top: 12px;
+  height: calc(104vh - 77px);
+  padding: 5px;
 }
 
 .done-page {
@@ -403,9 +416,15 @@ body {
 }
 .locations {
   margin-top: 10px;
+  background-color: #000000;
+  border-radius: 10px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   direction: rtl;
+}
+.locations Button {
+  margin-top: 10px;
 }
 .locations input {
   width: 98%;
@@ -414,12 +433,14 @@ body {
   background-color: #f1e8e8;
   border: #000000 1px solid;
   border-radius: 10px;
+  margin-top: 10px;
 }
 .locations textarea {
+  margin-top: 10px;
   width: 98%;
   max-width: 600px;
   color: rgb(8, 8, 8);
-  height: 50px;
+  height: 100px;
   background-color: #faf5f5;
   border: #000000 1px solid;
   border-radius: 10px;
@@ -427,7 +448,7 @@ body {
 .locationsselect {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   direction: rtl;
 }
@@ -437,13 +458,12 @@ body {
   direction: rtl;
 }
 .location {
-  width: 500px;
+  width: 230px;
   margin: 10px;
   direction: rtl;
   background-color: #000000;
 }
-.css-13cymwt-control {
-}
+
 .submitbtn {
   width: 30%;
   height: 30px;
@@ -461,6 +481,17 @@ body {
   display: flex;
   justify-content: center;
 }
+#buybtn {
+  background-color: white;
+  color: black;
+  height: 50px;
+}
+#buybtn:hover {
+  background-color: rgb(187, 190, 194);
+}
+#buybtn p {
+  color: black;
+}
 .emptypage {
   color: rgb(255, 7, 7);
   direction: rtl;
@@ -473,13 +504,16 @@ body {
   height: 200px;
   border-radius: 20px;
 }
-
+.formlable_p {
+  display: flex;
+  justify-content: flex-start;
+}
 .shop-btn {
   direction: rtl;
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 30px 0 50px 0;
+  margin: 10px 0 50px 0;
 }
 
 @keyframes nextPage {
@@ -508,7 +542,6 @@ body {
 @media only screen and (min-width: 1300px) {
   .cardbody {
     width: 200px;
-    height: 500px;
   }
   .sliderbody {
     height: 800px;
@@ -517,6 +550,7 @@ body {
 @media only screen and (min-width: 1500px) {
   .cardbody {
     width: 320px;
+
   }
   .page-item2 {
     right: 5%;
@@ -524,7 +558,8 @@ body {
 }
 @media only screen and (min-width: 1700px) {
   .cardbody {
-    width: 350px;
+    width: 300px;
+
   }
   .page-item2 {
     right: 4%;
@@ -541,7 +576,7 @@ body {
     width: 180px;
   }
   .cardbody {
-    height: 450px;
+    height: 500px;
   }
 }
 @media only screen and (max-width: 1100px) {
@@ -560,9 +595,7 @@ body {
   }
 }
 @media only screen and (max-width: 1000px) {
-  .myfooter {
-    margin-top: 2000px;
-  }
+ 
   .locations textarea {
     width: 98%;
     max-width: 100%;
@@ -587,7 +620,7 @@ body {
     height: 150px;
   }
   .dobebtnparent {
-    margin-top: 50px;
+    margin-top: 10px;
   }
 }
 @media only screen and (max-width: 970px) {

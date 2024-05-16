@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 import Select from "react-select";
@@ -9,12 +9,7 @@ import dynamic from "next/dynamic";
 import { ToastContainer, toast } from "react-toastify";
 import { NextPage } from "next";
 import { yupResolver } from "@hookform/resolvers/yup";
-import {
-  Button,
-  FormLabel,
-  Box,
-} from "@mui/material";
-
+import { Button, FormLabel, Box } from "@mui/material";
 
 const Map = dynamic(
   () => {
@@ -27,10 +22,6 @@ const Done: NextPage = () => {
   const sel1 = useRef<any>(null);
   const sel2 = useRef<any>(null);
   const notify = () => toast.success("آیتم با موفقیت اضافه شد");
-  const mapContainer = useRef(null);
-  const map = useRef(null);
-  const tokyo = { lng: 52.67895, lat: 36.55132 };
-  const [zoom] = useState(14);
   maptilersdk.config.apiKey = "iJSDRH4hvq23Ye9Ae39p";
 
   const [data, setData] = useState();
@@ -112,7 +103,6 @@ const Done: NextPage = () => {
 
   const [countryValue, setCountryValue] = useState(null);
   const { control } = useForm();
-
   return (
     <>
       <ToastContainer
@@ -130,7 +120,9 @@ const Done: NextPage = () => {
         <div>
           <form className="locations">
             <FormLabel sx={{ color: "white" }} className="formlable">
-              نام<sup className="errortext">*</sup>
+              <p>
+                نام<sup className="errortext">*</sup>
+              </p>
             </FormLabel>
             <div className="user-box">
               <input
@@ -139,16 +131,17 @@ const Done: NextPage = () => {
                 {...register("firstname")}
                 type="text"
               />
-              {/* @ts-ignore */}
-              <p className="errortext">{errors.firstname?.message}</p>
+
+              <p className="errortext">{errors.firstname?.message as any}</p>
             </div>
             <FormLabel
               sx={{ color: "white" }}
               color="primary"
               className="formlable"
             >
-              {" "}
-              نام خانوادگی<sup className="errortext">*</sup>
+              <p>
+                نام خانوادگی<sup className="errortext">*</sup>
+              </p>
             </FormLabel>
             <div className="user-box">
               <input
@@ -157,16 +150,17 @@ const Done: NextPage = () => {
                 data-testid="pass-input"
                 type="text"
               />
-              {/* @ts-ignore */}
-              <p className="errortext">{errors.lastname?.message}</p>
+
+              <p className="errortext">{errors.lastname?.message as any}</p>
             </div>
             <FormLabel
               sx={{ color: "white" }}
               color="primary"
               className="formlable"
             >
-              {" "}
-              موبایل<sup className="errortext">*</sup>
+              <p>
+                موبایل<sup className="errortext">*</sup>
+              </p>
             </FormLabel>
             <div className="user-box">
               <input
@@ -175,8 +169,8 @@ const Done: NextPage = () => {
                 data-testid="pass-input"
                 type="number"
               />
-              {/* @ts-ignore */}
-              <p className="errortext">{errors.phone?.message}</p>
+
+              <p className="errortext">{errors.phone?.message as any}</p>
             </div>
 
             <FormLabel
@@ -184,8 +178,9 @@ const Done: NextPage = () => {
               color="primary"
               className="formlable"
             >
-              {" "}
-              کد پستی<sup className="errortext">*</sup>
+              <p>
+                کد پستی<sup className="errortext">*</sup>
+              </p>
             </FormLabel>
             <div className="user-box">
               <input
@@ -194,8 +189,8 @@ const Done: NextPage = () => {
                 data-testid="pass-input"
                 type="number"
               />
-              {/* @ts-ignore */}
-              <p className="errortext">{errors.code?.message}</p>
+
+              <p className="errortext">{errors.code?.message as any}</p>
             </div>
 
             <FormLabel
@@ -203,19 +198,18 @@ const Done: NextPage = () => {
               color="primary"
               className="formlable"
             >
-              {" "}
-              آدرس<sup className="errortext">*</sup>
+              <p>
+                آدرس<sup className="errortext">*</sup>
+              </p>
             </FormLabel>
             <div className="user-box">
               <textarea
                 className="input"
                 {...register("address")}
                 data-testid="pass-input"
-                //@ts-ignore
-                type="text"
               />
-              {/* @ts-ignore */}
-              <p className="errortext">{errors.address?.message}</p>
+
+              <p className="errortext">{errors.address?.message as any}</p>
             </div>
             <div className="locationsselect">
               <div>
@@ -228,8 +222,6 @@ const Done: NextPage = () => {
                       options={options}
                       ref={sel1}
                       onChange={(e: any) => setData(e?.value)}
-                      //@ts-ignore
-                      label="Select option"
                       placeholder={"استان ها"}
                       menuPlacement="top"
                     />
@@ -246,15 +238,12 @@ const Done: NextPage = () => {
                   render={() => (
                     <Select
                       className="location"
-                      //@ts-ignore
-                      style={{ bgcolor: "black" }}
                       options={cities}
                       ref={sel2}
                       onChange={(e: any) => setData2(e?.value)}
                       value={cities.filter(function (option) {
                         return option.value === data2;
                       })}
-                      label="Select option"
                       placeholder={"شهر ها"}
                       menuPlacement="top"
                     />
@@ -267,12 +256,13 @@ const Done: NextPage = () => {
             </div>
             <div className="dobebtnparent">
               <Button
+                id="buybtn"
                 onClick={handleSubmit(onSubmit)}
                 sx={{ width: "100px" }}
                 variant="contained"
                 color="primary"
               >
-                ثبت نهایی
+                <p>ثبت نهایی</p>{" "}
               </Button>
             </div>
           </form>

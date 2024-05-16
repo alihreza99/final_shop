@@ -12,6 +12,7 @@ interface Props {
   id: string;
   number: number;
   change: any;
+  get: any;
 }
 const Num: NextPage<Props> = (props: any) => {
   const [num, setnum] = useState(props.number);
@@ -20,13 +21,13 @@ const Num: NextPage<Props> = (props: any) => {
   const [itemtitle, setItemtitle] = useState("");
   const { removeItem, items } = useCart();
   const [content, setContent] = useState(null);
-
+  const f = props.get;
   const handleClose = () => setShow(false);
   function handleShow(event: any) {
     setShow(true);
     setItemtitle(event);
   }
-  function deleteitem(e:any) {
+  function deleteitem(e: any) {
     console.log(e);
     fetch(`https://fakestoreapi.com/products/${e}`, {
       method: "DELETE",
@@ -38,18 +39,19 @@ const Num: NextPage<Props> = (props: any) => {
           payload: e,
         });
         removeItem(e);
+        f();
         props.change();
       }, 200);
     });
   }
   return (
     <>
-
       <div className="shopnumber">
         <button
           className="additionbtn h6 text-light"
           onClick={() => {
             setnum(num + 1);
+            f();
             dispatch({
               type: "plus",
               payload: {
@@ -72,6 +74,7 @@ const Num: NextPage<Props> = (props: any) => {
             onClick={() => {
               if (num != 1) {
                 setnum(num - 1);
+                f();
                 dispatch({
                   type: "min",
                   payload: {

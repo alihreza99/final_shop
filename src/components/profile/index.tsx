@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { store } from "../../redux/store";
 import LogoutIcon from "@mui/icons-material/Logout";
 import PersonIcon from "@mui/icons-material/Person";
-import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import Nav from "../../layout/nav";
 import Link from "next/link";
@@ -23,12 +22,10 @@ function createData(
 const index: NextPage = () => {
   const [profile, setprofile] = useState<any>("");
   const dispatch = useDispatch();
-  //@ts-ignore
-  const admin = useSelector((state) => state.auth.admin);
+  const admin = useSelector((state:any) => state?.auth?.admin);
   let [list, setlist] = useState(store.getState());
   useEffect(() => {
-    //@ts-ignore
-    setprofile(list.auth.admin);
+    setprofile(list?.auth?.admin);
   }, []);
 
   return (
